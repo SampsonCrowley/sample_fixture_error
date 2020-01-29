@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Uniques</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uniques.each do |unique| %>
+      <tr>
+        <td><%= unique.value %></td>
+        <td><%= link_to 'Show', unique %></td>
+        <td><%= link_to 'Edit', edit_unique_path(unique) %></td>
+        <td><%= link_to 'Destroy', unique, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unique', new_unique_path %>
